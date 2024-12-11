@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Thembalethu Development</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/site.webmanifest">
+    <meta name="description" content="Thembalethu Development">
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallerycss.css">
+    <link rel="stylesheet" href="css/collapse.css">
+
+
+    <style>
+        .image-folder {
+            display: inline-block;
+            margin: 10px;
+        }
+
+            .image-folder input {
+                display: none;
+            }
+
+            .image-folder label {
+                display: block;
+                border: 1px solid #ccc;
+                padding: 5px;
+                cursor: pointer;
+            }
+
+            .image-folder input:checked ~ .folder-content {
+                display: block;
+            }
+
+        .folder-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+            .folder-content img {
+                display: block;
+                margin-top: 5px;
+            }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Position the image container (needed to position the left and right arrows) */
+        .container {
+            position: relative;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Add a pointer when hovering over the thumbnail images */
+        .cursor {
+            cursor: pointer;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Container for image text */
+        .caption-container {
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Six columns side by side */
+        .column {
+            float: left;
+            width: 16.66%;
+        }
+
+        /* Add a transparency effect for thumnbail images */
+        .demo {
+            opacity: 0.6;
+        }
+
+            .active,
+            .demo:hover {
+                opacity: 1;
+            }
+
+        .caption {
+            position: absolute;
+            font-size: smaller;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            max-width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .ftco-gallery .img {
+            transition: filter 0.3s ease;
+        }
+
+        .ftco-gallery a:hover .caption {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .ftco-gallery a:hover .img {
+            filter: brightness(70%);
+        }
+
+        @media (max-width: 768px) {
+            .ftco-gallery .caption {
+                font-size: small;
+            }
+        }
+
+        .caption {
+            position: absolute;
+            font-size: smaller;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            max-width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .ftco-gallery .img {
+            transition: filter 0.3s ease;
+        }
+
+        .ftco-gallery a:hover .caption {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .ftco-gallery a:hover .img {
+            filter: brightness(70%);
+        }
+
+        @media (max-width: 768px) {
+            .ftco-gallery .caption {
+                font-size: small;
+            }
+        }
+    </style>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7690718621021810"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!--Catergorize Images Accoding to Each Project-->
+
+    <style>
+        .navbar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 168, 142, 0.7);
+            /* Semi-transparent color */
+            z-index: -1;
+            /* Place it behind the navbar content */
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Thembalethu Development</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                    aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item "><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="programmes.html" class="nav-link">Programmes</a></li>
+                    <li class="nav-item"><a href="procurement.html" class="nav-link">Procurement</a></li>
+                    <li class="nav-item"><a href="socials.html" class="nav-link">Socials</a></li>
+                    <li class="nav-item active"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="testimonial.html" class="nav-link">Testimonial</a></li>
+                    <li class="nav-item"><a href="careers.html" class="nav-link">Careers</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+
+    <div class="hero-wrap" style="background-image: url('images/background11.JPG');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+                <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+                    <img src="images/td01.png" style="max-width: 80px; max-height: 80px;" alt="img">
+                    <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Galleries - MQA</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--New Gallery-->
+
+    <section class="ftco-section ftco-gallery">
+        <div class="container">
+            <div class="d-md-flex flex-wrap">
+                <!-- Image 1 -->
+                <a href="images/MQA1.JPG"
+                   class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate"
+                   style="background-image: url(images/MQA1.JPG);">
+                    <span class="caption" style="color:black">
+                        An MQA participant proudly receives a certificate
+                        from a Thembalethu Development representative, marking a milestone in their journey of skills development
+                        and success.
+                    </span>
+                </a>
+                <!-- Image 2 -->
+                <a href="images/MQA2.JPG"
+                   class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate"
+                   style="background-image: url(images/MQA2.JPG);">
+                    <span class="caption" style="color:black">
+                        Western Cape, two SEF participants nurture a vibrant community
+                        garden, their harmonious efforts symbolizing sustainability and community well-being.
+                    </span>
+                </a>
+                <!-- Image 3 -->
+                <a href="images/MQA3.JPG"
+                   class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate"
+                   style="background-image: url(images/MQA3.JPG);">
+                    <span class="caption" style="color:black">
+                        Taken in Tembisa, participants diligently sort plastics, cardboard,
+                        and tin waste, fueling recycling and community cleanup endeavors.
+                    </span>
+                </a>
+                <!-- Image 4 -->
+                <a href="images/MQA4.JPG"
+                   class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate"
+                   style="background-image: url(images/MQA4.JPG);">
+                    <span class="caption" style="color:black">
+                        Capturing our project coordinator in Gauteng alongside participants
+                        at one of SEF's assisted micro-enterprises in Tembisa, where they craft furniture and are dedicated to
+                        educating others.
+                    </span>
+                </a>
+            </div>
+    </div>
+</section>
+
+    <!--End of New Gallery-->
+    <!-- Start page content -->
+
+    <div class="container mt-4 mt-lg-5">
+
+        <div class="row mb-4 my-lg-5">
+            <div class="col-12 col-md-8">
+                <h2 class="mb-3">
+                    <a href="#" class="fables-main-text-color fables-second-hover-color font-26 semi-font">
+                        Mining
+                        Qualification Authority (MQA)
+                    </a>
+                </h2>
+                <div id="contentToShow">
+                    <p class="fables-fiMfth-text-color font-14">
+                        Thembalethu Development was appointed by the Mining Qualification Authority (MQA) to implement the
+                        Unemployed Youth Development Programme in the
+                        Elias Motsoaledi Local Municipality of the Sekhukhune District, Limpopo Province...
+                    </p>
+                </div>
+                <button id="toggleButton"
+                        class="collapsible mt-4 btn fables-second-background-color white-color fables-main-hover-background-color font-15 white-color-hover px-5 py-2">
+                    Expand
+                    Content
+                </button>
+                <div class="content" style="display: none;">
+                    <p class="fables-fiMfth-text-color font-14">
+                        <br>
+                        Thembalethu Development was appointed by the Mining Qualification Authority (MQA) to implement the
+                        Unemployed Youth Development Programme in the Elias Motsoaledi Local Municipality of the Sekhukhune
+                        District, Limpopo Province. This initiative was designed to address the critical issue of youth unemployment
+                        in one of Limpopo's districts with the highest unemployment rates. Thembalethu Development's task was to
+                        provide accredited training to 80 unemployed youth, enhancing their skills and competencies to improve
+                        employability, start small farming enterprises, and pursue careers in agriculture.
+                        <br><br>
+                        The programme specifically targeted the development of practical agricultural skills, crucial for the
+                        district's economic growth. Of the 80 learners, 34 had previously completed parts of the skills programme
+                        and were now enrolled to finish the remaining units, leading to a full NQF level 3 qualification in Plant
+                        Production. This continuity ensured that the learners could build on their existing knowledge and move
+                        closer to becoming qualified professionals in the agricultural sector.
+                        <br><br>
+                        For the 46 new learners, the programme offered an NQF Level 3 Skills programme in Plant Production. This
+                        foundational training was designed to equip them with the necessary agricultural skills and knowledge to
+                        either enter the workforce or start their own farming ventures. The focus on plant production is
+                        particularly relevant to the region, given its agricultural potential and the need for skilled workers in
+                        this sector.
+                        <br><br>
+                        The programme's structure aimed to provide comprehensive training that combined theoretical knowledge with
+                        practical application. By doing so, it not only enhanced the employability of the participants but also
+                        empowered them to contribute to the local economy. The initiative also sought to inspire entrepreneurial
+                        spirit among the youth, encouraging them to explore opportunities in agriculture and potentially create job
+                        opportunities for others within their communities.
+                        <br><br>
+                        Overall, Thembalethu Development's implementation of the Unemployed Youth Development Programme in
+                        partnership with the MQA is a vital step towards addressing youth unemployment in the Sekhukhune District.
+                        By focusing on accredited training and practical skills development, the programme is helping to create a
+                        more skilled and capable workforce, fostering economic growth and stability in one of Limpopo's most
+                        underserved areas. The initiative not only benefits the individual participants but also has the potential
+                        to create a ripple effect, positively impacting the wider community.
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-3 offset-lg-1 mt-md-5 mt-lg-0">
+                <div class="my-2">
+                    <span class="fables-main-text-color font-15 semi-font">Programmes</span>
+                    <span class="fables-forth-text-color fifth"> : Education Support, Skill Development</span>
+                </div>
+                <div class="my-2">
+                    <span class="fables-main-text-color font-15 semi-font">Funder </span>
+                    <span class="fables-forth-text-color fifth"> : Mining Qualification Authority </span>
+                </div>
+
+                <a href="gallery.html"
+                   class="mt-4 btn fables-second-background-color white-color fables-main-hover-background-color font-15 white-color-hover px-5 py-2">
+                    All
+                    Galleries
+                </a>
+                <a href="project6.html"
+                   class="mt-4 btn fables-second-background-color white-color fables-main-hover-background-color font-15 white-color-hover px-5 py-2">
+                    Next
+                    Gallery
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    var contentToShow = document.getElementById("contentToShow");
+                    var toggleButton = document.getElementById("toggleButton");
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                        contentToShow.style.display = "block";
+                        toggleButton.textContent = "Expand Content";
+                    } else {
+                        content.style.display = "block";
+                        contentToShow.style.display = "none";
+                        toggleButton.textContent = "Collapse Content";
+                    }
+                });
+            }
+        });
+    </script>
+
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+    <!-- /End page content -->
+
+
+
+
+
+    <footer class="ftco-footer ftco-section img">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">About Us</h2>
+                        <p>
+                            Thembalethu Development empowers communities through various initiates, raging from education and
+                            healthcare
+                            to environmental stewardship and micro-enterprise development, fostering sustainable change and uplifting
+                            lives.
+                        </p>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                            <li class="ftco-animate">
+                                <a href="https://www.linkedin.com/company/thembalethu-development-npc/posts/?feedView=all&viewAsMember=true">
+                                    <span class="icon-linkedin"></span>
+                                </a>
+                            </li>
+                            <li class="ftco-animate">
+                                <a href="https://www.facebook.com/thembalethudev.org">
+                                    <span class="icon-facebook"></span>
+                                </a>
+                            </li>
+                            <li class="ftco-animate">
+                                <a href="https://www.instagram.com/thembalethudevelopment/">
+                                    <span class="icon-instagram"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Recent on our social media</h2>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url(images/success1.jpg);"></a>
+                            <div class="text">
+                                <h3 class="heading"><a href="#">From dreams to reality!</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> 13 Nov, 2024</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url(images/ecalani.jpg);"></a>
+                            <div class="text">
+                                <h3 class="heading"><a href="#">🌱 Growing Skills for a Better Future 🌱</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> 31 Oct, 2024</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="ftco-footer-widget mb-4 ml-md-4">
+                        <h2 class="ftco-heading-2">Site Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="py-2 d-block">Home</a></li>
+                            <li><a href="about.html" class="py-2 d-block">About</a></li>
+                            <li><a href="programmes.html" class="py-2 d-block">Programmes</a></li>
+                            <li><a href="procurement.html" class="py-2 d-block">Procurement</a></li>
+                            <li><a href="socials.html" class="py-2 d-block">Socials</a></li>
+                            <li><a href="gallery.html" class="py-2 d-block">Gallery</a></li>
+                            <li><a href="testimonial.html" class="py-2 d-block">Testimonials</a></li>
+                            <li><a href="careers.html" class="py-2 d-block">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Have a Questions?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li>
+                                    <span class="icon icon-map-marker"></span><span class="text">
+                                        Unit 5, Highway Gardens Office Park, 77
+                                        Minuach Road, Edenvale 1610
+                                    </span>
+                                </li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+27 010 786 0451</span></a></li>
+                                <li>
+                                    <a href="#">
+                                        <span class="icon icon-envelope"></span><span class="text">info@thembalethudev.org</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                    stroke="#F96D00" />
+        </svg>
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/collapse.js"></script>
+
+</body>
+
+</html>

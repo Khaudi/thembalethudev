@@ -1,0 +1,11 @@
+# Redirect to ensure index.html is the default
+DirectoryIndex index.html
+
+# Enable FollowSymLinks for all files
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
